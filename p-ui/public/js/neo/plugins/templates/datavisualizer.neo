@@ -520,7 +520,10 @@
 
     [part="table-body-row"]:hover {
         cursor: pointer;
-        background: {{ @Theme.colors("PRIME", 5) }};
+    }
+
+    [part="table-body-row"]:hover [part="table-body-col"] {
+        background: {{ @Theme.colors("LIGHT", 50) }};
     }
 
     [part="page"],
