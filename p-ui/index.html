@@ -222,7 +222,14 @@
             return `<div style="padding: 1rem">No data found</div>`;
         };
 
-        overlay.show();
+        table.addEventListener("click:row", (e) => {
+            console.log(e);
+        });
+
+        table.addEventListener("click:col", (e) => {
+            console.log(e);
+        });
+
         auto.empty = empty;
         select.empty = empty;
         auto.addEventListener("input", (e) => {

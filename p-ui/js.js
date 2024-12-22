@@ -145,20 +145,6 @@ function TableVisualizer(dataVisualizer, callback, routes, rowClick, colClick) {
 
     dataVisualizer.cols = callback(_routes);
 
-    if (dataVisualizer.cols.find((e) => e.name === "actions")) {
-        window.addEventListener("resize", () => {
-            dataVisualizer.paint();
-        });
-        dataVisualizer.addEventListener("painted", (e) => {
-            (dataVisualizer.refs.anchor || []).forEach((a, i) => {
-                const { x, y } = a.getBoundingClientRect();
-                const action = dataVisualizer.refs.action[i];
-                action.style.left = x + "px";
-                action.style.top = y + "px";
-            });
-        });
-    }
-
     dataVisualizer.addEventListener("search", async(e) => {
         e.preventDefault();
         if (timer) clearTimeout(timer);
