@@ -152,12 +152,12 @@
                 }
             },
             mounted() {
-               /* setTimeout(() => {
+               setTimeout(() => {
                     this.state.flip = true;
                     setTimeout(() => {
                         this.remove();
                     }, 250);
-                }, this.props.timer); */
+                }, this.props.timer);
             },
             updated(name, prev, next, type) {
                 Neo.Helper.option({
