@@ -242,21 +242,24 @@
             </neo-dropdown>
         </neo-stepper-item>
         <neo-stepper-item step="step-4">
-            <neo-autocomplete id="auto" style="width: 300px;" label="Test"></neo-autocomplete>
-            <neo-select search id="select" style="width: 300px;" label="Test">
-                <neo-select-group label="Test 1">
-                    <neo-select-item>hello</neo-select-item>
-                    <neo-select-item>hello</neo-select-item>
-                    <neo-select-item>hello</neo-select-item>
-                    <neo-select-item>hello</neo-select-item>
-                </neo-select-group>
-                <neo-select-group label="Test 2">
-                    <neo-select-item>me</neo-select-item>
-                    <neo-select-item>me</neo-select-item>
-                    <neo-select-item>me</neo-select-item>
-                    <neo-select-item>me</neo-select-item>
-                </neo-select-group>
-            </neo-select>
+            <form action="">
+                <neo-autocomplete id="auto" name="test" style="width: 300px;" label="Test" value="me" query="me"></neo-autocomplete>
+                <neo-select search id="select" style="width: 300px;" label="Test">
+                    <neo-select-group label="Test 1">
+                        <neo-select-item>hello</neo-select-item>
+                        <neo-select-item>hello</neo-select-item>
+                        <neo-select-item>hello</neo-select-item>
+                        <neo-select-item>hello</neo-select-item>
+                    </neo-select-group>
+                    <neo-select-group label="Test 2">
+                        <neo-select-item>me</neo-select-item>
+                        <neo-select-item>me</neo-select-item>
+                        <neo-select-item>me</neo-select-item>
+                        <neo-select-item>me</neo-select-item>
+                    </neo-select-group>
+                </neo-select>
+                <button>test</button>
+            </form>
         </neo-stepper-item>
         <div slot="bottom">
             <neo-tooltip label="prev step">
@@ -345,6 +348,16 @@
         Neo.Toaster.toast("hell test", "success");
         Neo.Toaster.toast("hell test", "info", null, "end");
         Neo.Toaster.toast("hell test", "warning", null, "end");
+
+        document.querySelector("form").addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent actual form submission
+            const form = event.target;
+            const formData = new FormData(form);
+
+            for (const [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+        });
     </script>
 </body>
 
