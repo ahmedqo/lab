@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}" dir="{{ Core::lang('ar') ? 'rtl' : 'ltr' }}" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/index.min.css" />
+    <link rel="stylesheet" href="/public/css/app.min.css" />
+    <title>@yield('title')</title>
+</head>
+
+<body close class="bg-x-light bg-x-gradient">
+    <section id="neo-page-cover">
+        <img src="/public/img/logo.webp" fetchpriority="high" alt="{{ env('APP_NAME') }} logo image" class="block w-36" />
+    </section>
+    <neo-wrapper class="flex flex-col gap-10">
+        <header class="container mx-auto p-4 w-full">
+            <div class="bg-x-prime bg-opacity-30 rounded-x-huge p-6 border-2 border-x-x-white border-y-x-white">
+                <div class="flex flex-col gap-10">
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="" class="block w-20">
+                            <img src="/public/img/logo.webp" loading="lazy" alt="{{ env('APP_NAME') }} logo image" class="block w-full" />
+                        </a>
+                        <nav class="hidden lg:block w-max ms-20">
+                            <ul class="flex flex-wrap items-center gap-4">
+                                <li class="w-max">
+                                    <a href="" class="flex flex-wrap w-max items-center border border-x-x-white border-y-x-white rounded-full p-[4px] outline-none hover:bg-x-white focus:bg-x-white">
+                                        <span class="flex items-center justify-center bg-x-white text-x-black rounded-full aspect-square w-8"></span>
+                                        <span class="text-x-black text-base font-x-thin ps-4 pe-5">Home</span>
+                                    </a>
+                                </li>
+                                <li class="w-max">
+                                    <a href="" class="flex flex-wrap w-max items-center border border-x-x-white border-y-x-white rounded-full p-[4px] outline-none hover:bg-x-white focus:bg-x-white">
+                                        <span class="flex items-center justify-center bg-x-white text-x-black rounded-full aspect-square w-8"></span>
+                                        <span class="text-x-black text-base font-x-thin ps-4 pe-5">Home</span>
+                                    </a>
+                                </li>
+                                <li class="w-max">
+                                    <a href="" class="flex flex-wrap w-max items-center border border-x-x-white border-y-x-white rounded-full p-[4px] outline-none hover:bg-x-white focus:bg-x-white">
+                                        <span class="flex items-center justify-center bg-x-white text-x-black rounded-full aspect-square w-8"></span>
+                                        <span class="text-x-black text-base font-x-thin ps-4 pe-5">Home</span>
+                                    </a>
+                                </li>
+                                <li class="w-max">
+                                    <a href="" class="flex flex-wrap w-max items-center border border-x-x-white border-y-x-white rounded-full p-[4px] outline-none hover:bg-x-white focus:bg-x-white">
+                                        <span class="flex items-center justify-center bg-x-white text-x-black rounded-full aspect-square w-8"></span>
+                                        <span class="text-x-black text-base font-x-thin ps-4 pe-5">Home</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <a href="" class="ms-auto flex flex-wrap w-max items-center border border-x-x-black border-y-x-black rounded-full outline-none text-base font-x-thin px-5 py-2 bg-x-black text-x-white hover:bg-x-white hover:text-x-black focus:bg-x-white focus:text-x-black hover:border-x-x-white hover:border-y-x-white focus:border-x-x-white focus:border-y-x-white">
+								Free Trial
+							</a>
+                    </div>
+                    <div class="grid grid-rows-1 grid-cols-1 lg:grid-cols-12">
+                        <div class="lg:col-span-7 flex flex-col gap-6">
+                            <h1 class="text-x-black font-x-huge text-[3.6rem] leading-[4rem]">
+                                Transforming <span class="text-x-acent">HealthCare</span> with AI Precision
+                            </h1>
+                            <div class="flex flex-col lg:flex-row lg:flex-wrap gap-4 lg:items-center">
+                                <p class="flex-1 text-base font-x-thin text-x-black text-opacity-70">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae minus a cupiditate in, explicabo officiis quis nisi earum quae error!
+                                </p>
+                                <a href="" class="mt-2 lg:mt-0 flex flex-wrap w-max items-center rounded-full p-[4px] bg-x-white text-x-black outline-none hover:bg-x-prime focus:bg-x-prime">
+                                    <span class="flex items-center justify-center bg-x-prime text-x-black rounded-full aspect-square w-8"></span>
+                                    <span class="text-base font-x-thin ps-4 pe-5">Find out more</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5"></div>
+                        <div class="lg:col-span-7 mt-10">
+                            <ul class="grid grid-rows-1 grid-cols-1 lg:grid-cols-12 gap-6">
+                                <li class="lg:col-span-3 rounded-x-huge bg-x-prime bg-opacity-30 border border-x-x-white border-y-x-white text-x-black flex flex-col">
+                                    <div class="flex flex-col gap-3 p-4">
+                                        <div class="flex items-center justify-between gap-4">
+                                            <span class="text-lg text-x-black font-x-thin">99%</span>
+                                            <span class="w-5 h-5 rounded-full flex items-center justify-center bg-x-acent text-x-white"></span>
+                                        </div>
+                                        <span class="text-sm font-x-thi text-center text-x-black text-opacity-70n">
+												Your Health Our Priority!
+											</span>
+                                    </div>
+                                    <div class="w-full lg:flex-1 h-44 lg:h-auto rounded-x-huge bg-red-500 border border-x-x-white border-y-x-white -mb-px -mx-px"></div>
+                                </li>
+                                <li class="lg:col-span-9 rounded-x-huge bg-x-prime bg-opacity-30 border border-x-x-white border-y-x-white p-4 flex flex-col gap-8 text-x-black">
+                                    <div class="text-[2.3rem] items-center flex flex-wrap gap-2 text-x-black font-x-huge">
+                                        <span>TRANSFOM</span>
+                                        <span class="inline-block w-32 h-10 rounded-full bg-red-500 border border-x-x-white border-y-x-white"></span> YOUR
+                                        <span class="inline-block w-16 h-10 rounded-full bg-red-500 border border-x-x-white border-y-x-white"></span>
+                                        <span>HEALTHCARE</span> <span>JOURNEY</span> <span>WITH</span> <span>AI</span> <span>INNOVATION!</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex flex-col gap-20">
+            <section class="container mx-auto p-4 w-full">
+                <div class="grid grid-rows-1 grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0">
+                    <div class="flex flex-col gap-6 lg:col-span-8">
+                        <h2 class="text-2xl font-x-thin text-x-black">
+                            Why <br /> Partner with Us?
+                        </h2>
+                        <h3 class="text-4xl lg:text-5xl font-x-huge text-x-black leading-[3rem] lg:leading-[4rem] my-auto">
+                            Innovative
+                            <div class="relative inline-block">
+                                <span class="absolute -top-2 left-1/2 -translate-x-1/2 w-max flex px-4 rounded-full bg-x-prime bg-opacity-20 border border-x-x-white border-y-x-white text-xl text-x-black font-x-thin">
+										Health
+									</span> Solutions
+                            </div>
+                            <br /> for
+                            <div class="relative inline-block">
+                                <span class="absolute -bottom-3 -left-16 w-max flex px-4 rounded-full bg-x-prime bg-opacity-20 border border-x-x-white border-y-x-white text-xl text-x-black font-x-thin">
+										Trust
+									</span> Personalized
+                            </div>
+                            <div class="relative inline-block">
+                                <span class="absolute -top-2 -right-8 lg:-right-12 w-max flex px-4 rounded-full bg-x-prime bg-opacity-20 border border-x-x-white border-y-x-white text-xl text-x-black font-x-thin">
+										Support
+									</span> Health.
+                            </div>
+                        </h3>
+                    </div>
+                    <ul class="w-10/12 lg:w-full mx-auto lg:col-span-4 grid grid-rows-1 grid-cols-12 gap-6">
+                        <li class="col-span-5 rounded-x-huge bg-x-prime p-4 flex flex-col gap-8 text-x-black">
+                            <span class="text-3xl font-x-huge">20+</span>
+                            <span class="text-base font-x-thin">
+									Available <br />
+									Specialists
+								</span>
+                        </li>
+                        <li class="col-span-5 rounded-x-huge bg-x-prime bg-opacity-30 border border-x-x-white border-y-x-white p-4 flex flex-col gap-8 text-x-black">
+                            <span class="text-3xl font-x-huge">85%</span>
+                            <span class="text-base font-x-thin">
+									User Satisfaction <br />
+									Rate
+								</span>
+                        </li>
+                        <li class="col-span-5 col-start-3 rounded-x-huge bg-x-prime bg-opacity-70 p-4 flex flex-col gap-8 text-x-black">
+                            <span class="text-3xl font-x-huge">70%</span>
+                            <span class="text-base font-x-thin">
+									Faster <br />
+									Diagnoses
+								</span>
+                        </li>
+                        <li class="col-span-5 rounded-x-huge bg-x-acent p-4 flex flex-col gap-8 text-x-white">
+                            <span class="text-3xl font-x-huge">15M</span>
+                            <span class="text-base font-x-thin">
+									Patients <br />
+									Served
+								</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="container mx-auto p-4 w-full">
+                <div class="flex flex-col gap-16">
+                    <h3 class="text-x-black font-x-huge text-6xl text-center">Our Service</h3>
+                    <ul class="grid grid-rows-1 grid-cols-1 lg:grid-cols-2 gap-6">
+                        <li>
+                            <a href="" class="grid grid-rows-1 grid-cols-3 h-40">
+                                <div class="col-span-3 col-start-1 row-start-1 bg-red-500 rounded-x-huge border-2 border-x-x-white border-y-x-white"></div>
+                                <div class="col-span-2 col-start-2 row-start-1 flex items-center justify-center rounded-x-huge border-2 border-x-x-white border-y-x-white isolate relative before:absolute before:content-[''] before:inset-0 before:blur-sm before:-z-10">
+                                    <span class="font-x-thin text-x-black text-3xl">Instant Consult</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="grid grid-rows-1 grid-cols-3 h-40">
+                                <div class="col-span-3 col-start-1 row-start-1 bg-red-500 rounded-x-huge border-2 border-x-x-white border-y-x-white"></div>
+                                <div class="col-span-2 col-start-2 row-start-1 flex items-center justify-center rounded-x-huge border-2 border-x-x-white border-y-x-white isolate relative before:absolute before:content-[''] before:inset-0 before:blur-sm before:-z-10">
+                                    <span class="font-x-thin text-x-black text-3xl">Personalized Care</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="grid grid-rows-1 grid-cols-3 h-40">
+                                <div class="col-span-3 col-start-1 row-start-1 bg-red-500 rounded-x-huge border-2 border-x-x-white border-y-x-white"></div>
+                                <div class="col-span-2 col-start-2 row-start-1 flex items-center justify-center rounded-x-huge border-2 border-x-x-white border-y-x-white isolate relative before:absolute before:content-[''] before:inset-0 before:blur-sm before:-z-10">
+                                    <span class="font-x-thin text-x-black text-3xl">AI Assisted</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="grid grid-rows-1 grid-cols-3 h-40">
+                                <div class="col-span-3 col-start-1 row-start-1 bg-red-500 rounded-x-huge border-2 border-x-x-white border-y-x-white"></div>
+                                <div class="col-span-2 col-start-2 row-start-1 flex items-center justify-center rounded-x-huge border-2 border-x-x-white border-y-x-white isolate relative before:absolute before:content-[''] before:inset-0 before:blur-sm before:-z-10">
+                                    <span class="font-x-thin text-x-black text-3xl">Symptoms Checker</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="container mx-auto p-4 w-full">
+                <div class="flex flex-col gap-16">
+                    <h3 class="text-x-black font-x-huge text-6xl text-center">How CareAI Works</h3>
+                    <ul class="grid grid-rows-1 grid-cols-1 lg:grid-cols-3 gap-6">
+                        <li>
+                            <a href="" class="flex flex-col gap-20 rounded-x-huge border-2 border-x-x-white border-y-x-white bg-x-light p-6">
+                                <div class="flex items-center justify-between gap-4">
+                                    <span class="text-lg text-x-black text-opacity-70 font-x-thin">Our Process</span>
+                                    <span class="w-8 h-8 rounded-full flex items-center justify-center bg-x-prime text-x-black"></span>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                    <h4 class="text-2xl font-x-huge text-x-black">
+                                        Your Health, Simplified
+                                    </h4>
+                                    <p class="text-base font-x-thin text-x-black text-opacity-70">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur?
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="flex flex-col gap-20 rounded-x-huge border-2 border-x-x-white border-y-x-white bg-x-prime bg-opacity-30 p-6">
+                                <div class="flex items-center justify-between gap-4">
+                                    <span class="text-lg text-x-black text-opacity-70 font-x-thin">Getting Started</span>
+                                    <span class="w-8 h-8 rounded-full flex items-center justify-center bg-x-acent text-x-white"></span>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                    <h4 class="text-2xl font-x-huge text-x-black">
+                                        Easy Steps to Health
+                                    </h4>
+                                    <p class="text-base font-x-thin text-x-black text-opacity-70">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur?
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="flex flex-col gap-20 rounded-x-huge border-2 border-x-x-white border-y-x-white bg-x-light p-6">
+                                <div class="flex items-center justify-between gap-4">
+                                    <span class="text-lg text-x-black text-opacity-70 font-x-thin">How it Works</span>
+                                    <span class="w-8 h-8 rounded-full flex items-center justify-center bg-x-prime text-x-black"></span>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                    <h4 class="text-2xl font-x-huge text-x-black">
+                                        Effortless AI-Driven Care
+                                    </h4>
+                                    <p class="text-base font-x-thin text-x-black text-opacity-70">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur?
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="container mx-auto p-4 w-full">
+                <div class="flex flex-col gap-6 rounded-x-huge bg-x-acent py-20 px-10">
+                    <h3 class="text-x-white font-x-thin text-6xl text-center">Start Your Health Journey</h3>
+                    <p class="text-lg font-x-thin text-x-white text-center text-opacity-70 lg:w-7/12 mx-auto">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae minus a cupiditate in, explicabo officiis quis nisi earum quae error!
+                    </p>
+                    <a href="" class="mx-auto mt-3 flex flex-wrap w-max items-center rounded-full p-[4px] bg-x-white text-x-black outline-none hover:bg-x-black hover:text-x-white focus:bg-x-black focus:text-x-white">
+                        <span class="flex items-center justify-center bg-x-black text-x-white rounded-full aspect-square w-8"></span>
+                        <span class="text-base font-x-thin ps-4 pe-5">Join CareAI Now</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+        <footer class="container mx-auto p-4 w-full">
+            <div class="bg-x-prime bg-opacity-30 rounded-x-huge p-6 border-2 border-x-x-white border-y-x-white">
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col lg:flex-row lg:flex-wrap gap-6">
+                        <div class="flex flex-col gap-4 flex-1 lg:max-w-xs me-auto">
+                            <a href="" class="block w-20">
+                                <img src="/public/img/logo.webp" loading="lazy" alt="{{ env('APP_NAME') }} logo image" class="block w-full" />
+                            </a>
+                            <p class="text-base font-x-thin text-x-black text-opacity-70">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur?
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-4 w-max">
+                            <h5 class="text-x-black font-x-huge text-lg">Quick Links</h5>
+                            <nav>
+                                <ul class="flex flex-col gap-px">
+                                    <li>
+                                        <a href="" class="flex text-x-black text-opacity-70 font-x-thin text-base">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="flex text-x-black text-opacity-70 font-x-thin text-base">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="flex text-x-black text-opacity-70 font-x-thin text-base">Link 1</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="flex flex-col gap-4 w-max">
+                            <h5 class="text-x-black font-x-huge text-lg">Company</h5>
+                            <nav>
+                                <ul class="flex flex-col gap-px">
+                                    <li>
+                                        <a href="" class="flex text-x-black text-opacity-70 font-x-thin text-base">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="flex text-x-black text-opacity-70 font-x-thin text-base">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="flex text-x-black text-opacity-70 font-x-thin text-base">Link 1</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="flex flex-col gap-4 w-max">
+                            <h5 class="text-x-black font-x-huge text-lg">Legal</h5>
+                            <nav>
+                                <ul class="flex flex-col gap-px">
+                                    <li>
+                                        <a href="" class="flex text-x-black text-opacity-70 font-x-thin text-base">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="flex text-x-black text-opacity-70 font-x-thin text-base">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="flex text-x-black text-opacity-70 font-x-thin text-base">Link 1</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="w-max mx-auto lg:mx-0 flex items-center gap-6">
+                        <span class="text-base font-x-thin text-x-black text-opacity-70">
+								&copy; Health Care 2025
+							</span>
+                        <ul class="w-max flex flex-wrap gap-2">
+                            <li>
+                                <a href="" class="flex items-center justify-center bg-x-black text-x-white w-5 h-5 rounded-full"></a>
+                            </li>
+                            <li>
+                                <a href="" class="flex items-center justify-center bg-x-black text-x-white w-5 h-5 rounded-full"></a>
+                            </li>
+                            <li>
+                                <a href="" class="flex items-center justify-center bg-x-black text-x-white w-5 h-5 rounded-full"></a>
+                            </li>
+                            <li>
+                                <a href="" class="flex items-center justify-center bg-x-black text-x-white w-5 h-5 rounded-full"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </neo-wrapper>
+    <neo-toaster horisontal="end" vertical="start" class="full-size"></neo-toaster>
+    <script src="/public/js/neo/index.min.js"></script>
+    <script src="/public/js/neo/plugins/index.min.js"></script>
+    <script>
+        Neo.load(function() {
+            document.body.removeAttribute("close");
+            Neo.Helper.Theme.assign("colors", "PRIME", getComputedStyle(document.documentElement).getPropertyValue("--prime"));
+            Neo.upgrade();
+
+            document.body.querySelector("#neo-page-cover").remove();
+        });
+    </script>
+</body>
+
+</html>
