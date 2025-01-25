@@ -16,7 +16,7 @@
 </head>
 
 <body class="bg-gray-200">
-    <neo-stepper step="step-4">
+    <neo-stepper steps="step 1 |step 2 | step 3 | step 4">
         <neo-stepper-item step="step-1">
             <ul class="container mx-auto grid gap-6 grid-cols-2 grid-rows-1 lg:grid-cols-12 lg:grid-rows-6">
                 <li class="lg:col-span-3 p-4 gap-4 flex flex-col flex-wrap items-center lg:flex-row relative bg-x-white rounded-x-thin shadow-x-core">
@@ -293,11 +293,19 @@
 
         stepper.addEventListener("change:step", (e) => {
             prev.style.display = stepper.current === 0 ? "none" : "";
-            next.style.display = stepper.current === stepper.steps - 1 ? "none" : "";
-            save.style.display = stepper.current === stepper.steps - 1 ? "" : "none";
+            next.style.display = stepper.current === stepper.items.length - 1 ? "none" : "";
+            save.style.display = stepper.current === stepper.items.length - 1 ? "" : "none";
         });
 
-        stepper.addEventListener("next", (e) => {});
+        var validated = false;
+        stepper.addEventListener("next", (e) => {
+            if (validated) validated = false;
+            else {
+                e.preventDefault();
+                console.log(200, e.detail);
+                validated = true;
+            }
+        });
 
         const table = document.querySelector("neo-datavisualizer");
         table.loading = true;
@@ -310,10 +318,15 @@
                     name: "test_4",
                     text: "Test 4",
                     bodyRender(row) {
-                        const anchor = document.createElement("div");
+                        /*  const anchor = document.createElement("div");
                         anchor.style = "position: relative; width: 2rem; height: 2rem; margin: auto;";
                         anchor.innerHTML = `<action-menu ref="drop" scene="100" print="100" patch="100" clear="100" csrf="100" target="2" />`;
-                        return anchor;
+                        return anchor; */
+                        return new Neo.Sketch(`<input @change="{{ change }}">`, {
+                            change: function(e) {
+                                console.log(e.target.value, this.context);
+                            },
+                        });
                     },
                 }, ],
                 rows: [{
