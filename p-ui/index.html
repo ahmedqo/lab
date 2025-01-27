@@ -371,6 +371,108 @@
                 console.log(`${key}: ${value}`);
             }
         });
+
+        const test = new Neo.Sketch(`<div>
+			    <span v="{{ v }}" {{ s }}="s">{{ text }}</span>
+			             {{ input() }}
+			</div>`, {
+            text: "ahmed",
+            v: "vv",
+            s: "ss",
+            input: () => new Neo.Sketch(`<ul>
+			             <li>test</li>
+			              <li>test</li>
+			               <li>test</li>
+			                <li>{{ text() }}</li>
+			         </ul>`, {
+                text: () => {
+                    return new Neo.Sketch(`<input @change="{{ change }}">`, {
+                        change: function(e) {
+                            console.log(e.target.value, this.context);
+                        },
+                    })
+                }
+            })
+        });
+
+        const tpl = test.build(Neo.Sketch.compile(test.source));
+
+        class Fiber {
+            constructor(type = null, props = {}) {
+                this.type = type;
+                this.props = {
+                    ...props,
+                    children: props.children || [],
+                };
+            }
+        }
+
+
+        class Parser {
+            static {
+                this.join = new RegExp("\\$JOIN\\$\\d+\\$");
+                this.nbr = new RegExp("\\d+");
+
+                this.compose = function compose(source, props) {
+                    return source.reduce((acc, part, i) => acc + part + (i < props.length ? ["string", "number", "boolean"].includes(typeof props[i]) ? props[i] : `$JOIN$${i}$` : ""), "").trim();
+                }
+
+                this.parse = function parse(source) {
+                    const template = document.createElement("template");
+                    template.innerHTML = source;
+                    return template.content;
+                }
+            }
+
+            constructor(source, ...props) {
+                this.source = source;
+                this.props = props;
+            }
+
+            traverse(node) {
+                if (node.nodeType !== Node.TEXT_NODE) return new Fiber(
+                    node.nodeName.toLowerCase(), {
+                        /* ...Object.fromEntries(Array.from(node.attributes || []).map((attr) => {
+                             const name = Parser.join.test(attr.name) ? this.props[+attr.name.match(Parser.nbr)] : attr.name;
+                             const value = Parser.join.test(attr.value) ? this.props[+attr.value.match(Parser.nbr)] : attr.value;
+                             return [name, value]
+                         })),*/
+                        ...Array.from(node.attributes || []).reduce((carry, attr) => {
+                            const name = Parser.join.test(attr.name) ? this.props[+attr.name.match(Parser.nbr)] : attr.name;
+                            const value = Parser.join.test(attr.value) ? this.props[+attr.value.match(Parser.nbr)] : attr.value;
+                            carry[name] = value;
+                            return carry;
+                        }, {}),
+                        children: Array.from(node.childNodes).map(
+                            (node) => this.traverse(node)
+                        ).filter(Boolean).flat()
+                    }
+                );
+
+                const value = node.nodeValue.trim();
+                if (!value.trim()) return null;
+
+                const index = value.replace(/\s\s+|\n|\r\n/g, "");
+                const isProp = Parser.join.test(index);
+
+                if (!isProp) return new Fiber('text', {
+                    nodeValue: value
+                });
+
+                const element = this.props[+index.match(Parser.nbr)];
+
+                return element instanceof Neo.Sketch ? element.exec() : new Fiber(element, {
+                    children: []
+                });
+            }
+
+            exec() {
+                const source = Parser.compose(this.source, this.props);
+                const fiber = this.traverse(Parser.parse(source));
+
+                return fiber.props.children;
+            }
+        }
     </script>
 </body>
 

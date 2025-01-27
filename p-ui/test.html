@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Moroccan ID OCR</title>
+	</head>
+	<body>
+		<h1>Extract Data from Moroccan ID Card</h1>
+		<input type="file" id="imageInput" accept="image/*" />
+		<div id="output">
+			<h3>Extracted Data:</h3>
+			<pre id="data"></pre>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+		<script>
+			document.getElementById("imageInput").addEventListener("change", async (event) => {
+				const file = event.target.files[0];
+				if (!file) return;
+
+				const reader = new FileReader();
+				reader.onload = async () => {
+					const img = reader.result;
+
+					// Recognize text from the image
+					const { data } = await Tesseract.recognize(img, "ara+lat", {
+						logger: (info) => console.log(info), // Logs progress
+					});
+
+					const extractedText = data.text;
+					console.log("Extracted Text:", extractedText);
+
+					// Extract specific details from the ID card
+					const details = extractDetailsFromText(extractedText);
+					document.getElementById("data").innerText = JSON.stringify(details, null, 2);
+				};
+				reader.readAsDataURL(file);
+			});
+
+			// Function to extract details from the text
+			function extractDetailsFromText(text) {
+				const nameRegex = /(nom|name|الاسم):?\s*([^\n]+)/i;
+				const cinRegex = /(cin|رقم البطاقة الوطنية):?\s*([^\n]+)/i;
+				const addressRegex = /(address|العنوان):?\s*([^\n]+)/i;
+				const birthRegex = /(date de naissance|birth date|تاريخ الميلاد):?\s*([^\n]+)/i;
+
+				return {
+					name: (text.match(nameRegex) || [])[2]?.trim(),
+					cin: (text.match(cinRegex) || [])[2]?.trim(),
+					address: (text.match(addressRegex) || [])[2]?.trim(),
+					birthDate: (text.match(birthRegex) || [])[2]?.trim(),
+				};
+			}
+		</script>
+	</body>
+</html>
